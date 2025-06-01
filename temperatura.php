@@ -7,9 +7,11 @@
 </head>
 <body>
 <form action="temperatura.php" method="post">
-            <label for="celcius">graus </label><br>
-            <input type="number" name="celcius" id="celcius" required class="formu"> 
-            <br>
+    <label for="celcius">graus </label><br>
+    <input type="number" name="celcius" id="celcius" required class="formu"> 
+
+    <br>
+</form>
 
 <?php
 
