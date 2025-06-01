@@ -8,17 +8,12 @@
 <body>
 <form action="temperatura.php" method="post">
             <label for="celcius">graus </label><br>
-            <input type="number" name="celcius" id="celcius" required class="formu"> <br>
+            <input type="number" name="celcius" id="celcius" required class="formu"> 
+            <br>
+
 <?php
-$cal = $_POST['celcius'];
-
-$cal = ($cal * 9) / 5 + 32;
-
-
 
 ?>    
- <p><?php echo $cal; ?></p>
  
-
 </body>
 </html>

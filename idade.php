@@ -10,12 +10,10 @@
             <label for="idade">idade </label><br>
             <input type="number" name="idade" id="idade" required class="formu">
     </form>
+
 <?php 
-$calIda = $_POST['idade'];
-$ano = date("Y");
-$calIda = $ano - $calIda;
+
 ?>
-<p><?= $calIda; ?></p>
 
 </body>
 </html>
