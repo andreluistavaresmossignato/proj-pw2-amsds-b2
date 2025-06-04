@@ -13,7 +13,7 @@
         <h1>Tela Principal</h1>
 
     </header>
-
+ 
     <main>
         <section id="botoes">
             <a href="idade.php" onmouseover="aparecerTexto(1)" onmouseout="someTexto(1)"><button class="btn_telaPrincipal">Calculadora de Idade</button></a>
@@ -39,6 +39,7 @@
         // variaveis
         let txtInfos = document.getElementById('infos')
 
+        // funções
         function aparecerTexto(metodo) {
             txtInfos.style.border = '1px solid black'
             switch (metodo) {
