@@ -1,0 +1,34 @@
+    <script>
+        // variaveis
+        let txtInfos = document.getElementById('infos')
+        let txtPadrao = document.getElementById('txtPadrao')
+
+        // funções
+        function aparecerTexto(metodo) {
+            txtPadrao.style.display = 'none'
+            txtInfos.style.border = '1px solid black'
+            switch (metodo) {
+                case 'idade': 
+                let txtIdade = document.getElementById('txtIdade').style.display = 'block'
+                break
+
+                case 'temperatura':
+                let txtTemperatura = document.getElementById('txtTemperatura').style.display = 'block'
+                break
+            }
+        }
+
+        function someTexto(metodo) {
+            txtPadrao.style.display = 'block'
+            txtInfos.style.border = 'none'
+            switch (metodo) {
+                case 'idade': 
+                let txtIdade = document.getElementById('txtIdade').style.display = 'none'
+                break
+
+                case 'temperatura':
+                let txtTemperatura = document.getElementById('txtTemperatura').style.display = 'none'
+                break
+            }
+        }
+    </script>
