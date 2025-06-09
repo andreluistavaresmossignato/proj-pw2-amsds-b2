@@ -1,55 +1,32 @@
-/**{
-    margin: 0px;
-    background: linear-gradient(to right, gray, white, gray);
+:root {
+    /* Fontes */
+    --fontePrincipal: 'Inter', sans-serif;
 }
 
-#resultado{
-    margin-top: 10px;
-    margin-bottom: 10px;   
-}
-
-#calculo{
-    background: white;
-    height: 200px;
-    width: 400px;
-    font-size: 30px;
-    border-radius: 0px 0px 200px 0px;
-    border: 10px solid;
-}
-
-#calculo2{
-    background: white;
-    height: 200px;
-    width: 300px;
-    font-size: 30px;
-    border-radius: 0px 0px 200px 0px;
-    border: 10px solid;
-}
-
-select{
-    color: aliceblue;
-    font-size: 20px;
-    background: black;
-    width: 300px;
-    height: 50px;
-    border: 0px;
-}
-
-button{
-    background: white;
+body {
+    margin: 0;
+    padding: 0;
+    background-color:white;
     color: black;
-    font-size: 40px;
-    border: 100px;
-    margin-top: 40px;
-    margin-left: 40px;
-    width: 170px;
-    height: 50px;
+    font-family:var(--fontePrincipal) ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    
 }
 
-#caixa{
-    background: black;
-    color: aliceblue;
-    width: 175px;
-    height: 30px;
-    font-size: 20px;
-} */
+section#conteudoPrincipal {
+    background-color: bisque;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: black;
+    width: 700px;
+    text-align: center;
+}
+
+p {
+    width: 60vw;
+    text-align: center;
+    font-size: 18px;
+}
