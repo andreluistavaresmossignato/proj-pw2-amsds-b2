@@ -19,7 +19,7 @@
             <input type="number" id="valor" name="valor" required placeholder="ex: 30"> <br><br>
 
             <label>De:</label>
-            <select name="de">
+            <select name="de" class="de">
                 <option value="celsius">Celsius</option>
                 <option value="fahrenheit">Fahrenheit</option>
                 <option value="kelvin">Kelvin</option>
@@ -32,9 +32,10 @@
                 <option value="kelvin">Kelvin</option>
             </select><br><br>
 
-            <button type="submit">Converter</button>
+            <button type="submit" id="converter">Converter</button>
         </form>
-        <a href="index.html"><button>Voltar para Tela Principal</button></a>
+        <br>
+        <a href="index.html"><button id="voltar">Voltar para Tela Principal</button></a>
 
         <?php
 
