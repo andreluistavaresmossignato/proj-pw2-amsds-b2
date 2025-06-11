@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 <head>
@@ -21,7 +25,22 @@
       </form>
       <br>
         <?php
+        if (!isset($_SESSION['conquista1'])) $_SESSION['conquista1'] = false;
+        if (!isset($_SESSION['conquista2'])) $_SESSION['conquista2'] = false;
+        if (!isset($_SESSION['conquista3'])) $_SESSION['conquista3'] = false;
+
+        $mensagemIdade = "";
+        $mensagemConquista1 = "";
+        $mensagemConquista2 = "";
+        $mensagemConquista3 = "";
+
+
         $pode_conteudoExtra = false;
+        $conquista1 = false;
+        $conquista2 = false;
+        $conquista3 = false;
+        $emojis = ['😭', '🏆', '🔥'];
+        $descricoes = ['Derrota', 'Vitória', 'Fogo'];
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $dataNascimento = $_POST["nascimento"];
@@ -29,29 +48,51 @@
                 $dataNascimentoObj = new DateTime($dataNascimento);
                 $hoje = new DateTime();
                 $idade = $hoje->diff($dataNascimentoObj)->y;
-                if($dataNascimentoObj->format('y') < 120 && $dataNascimentoObj->format('d-m-y') <= $hoje->format('d-m-y') && $idade <= 122) {
-
-                    # Mensagem padrão
+        
+                // Correção aqui
+                if ($dataNascimentoObj <= $hoje && $idade <= 122) {
+        
                     echo "<br><p>Você tem <strong>$idade anos</strong>.</p><br>";
-
-                    # Mensagens secretas
-                    if ($dataNascimentoObj->format('d-m-y') === $hoje->format('d-m-y')) {
+        
+                    // Mensagens secretas e desbloqueio de conquistas
+                    if ($dataNascimentoObj->format('d-m-Y') === $hoje->format('d-m-Y')) {
                         echo "<p><strong>Ué, você nasceu hoje e já está usando o site? 😂</strong></p>";
-                    } else if ($dataNascimentoObj->format('d-m') === $hoje->format('d-m')) {
+                        $_SESSION['conquista1'] = true;
+                    } elseif ($dataNascimentoObj->format('d-m') === $hoje->format('d-m')) {
                         echo "<p><strong>Hoje é seu aniversário, parabéns!! 🥳🎉</strong></p>";
+                        $_SESSION['conquista2'] = true;
                     } elseif ($idade == 122) {
-                        echo "<p><strong>Essa é a idade da pessoa mais velha do mundo 👏</strong></p>";
+                        echo "<p><strong>Essa é a idade da pessoa mais velha do mundo já registrada 👏</strong></p>";
+                        $_SESSION['conquista3'] = true;
                     }
+        
                     $pode_conteudoExtra = true;
+                } else {
+                    echo "<p>Por favor, insira uma data válida.</p>";
                 }
-                else {
-                    echo "<p>Por favor , insira uma data valida.</p>";
-                }
-
-                if($pode_conteudoExtra) {
+        
+                if ($pode_conteudoExtra) {
                     conteudoExtra();
                 }
             }
+        }        
+
+        if ($_SESSION['conquista1']) {
+            $mensagemConquista1 = "🎉 Conquista 1 desbloqueada: Você nasceu hoje e já está usando o site!";
+        } else {
+            $mensagemConquista1 = "❔ Conquista 1: Nascido hoje (ainda bloqueada)";
+        }
+        
+        if ($_SESSION['conquista2']) {
+            $mensagemConquista2 = "🎂 Conquista 2 desbloqueada: Hoje é seu aniversário, parabéns!";
+        } else {
+            $mensagemConquista2 = "❔ Conquista 2: Aniversário hoje (ainda bloqueada)";
+        }
+        
+        if ($_SESSION['conquista3']) {
+            $mensagemConquista3 = "🏆 Conquista 3 desbloqueada: Idade da pessoa mais velha já registrada!";
+        } else {
+            $mensagemConquista3 = "❔ Conquista 3: 122 anos de idade (ainda bloqueada)";
         }
       
         function conteudoExtra() {
@@ -106,6 +147,36 @@
         }
         
       ?>
+      <h2>Conquistas</h2>
+      <article>
+            <div class="conquistaContainer">
+                <div class="caixaConquista <?= $_SESSION['conquista1'] ? 'ativa' : 'bloqueada' ?>">
+                    <?= $_SESSION['conquista1'] ? '🎉' : '❔' ?>
+                </div>
+                <div class="descricaoConquista">
+                    <?= $_SESSION['conquista1'] ? 'Você nasceu hoje e já está usando o site!' : 'Conquista secreta...' ?>
+                </div>
+            </div>
+
+            <div class="conquistaContainer">
+                <div class="caixaConquista <?= $_SESSION['conquista2'] ? 'ativa' : 'bloqueada' ?>">
+                    <?= $_SESSION['conquista2'] ? '🎂' : '❔' ?>
+                </div>
+                <div class="descricaoConquista">
+                    <?= $_SESSION['conquista2'] ? 'Hoje é seu aniversário, parabéns!' : 'Conquista secreta...' ?>
+                </div>
+            </div>
+
+            <div class="conquistaContainer">
+                <div class="caixaConquista <?= $_SESSION['conquista3'] ? 'ativa' : 'bloqueada' ?>">
+                    <?= $_SESSION['conquista3'] ? '🏆' : '❔' ?>
+                </div>
+                <div class="descricaoConquista">
+                    <?= $_SESSION['conquista3'] ? 'Idade da pessoa mais velha já registrada!' : 'Conquista secreta...' ?>
+                </div>
+            </div>
+        </article>
   </main>
+
 </body>  
 </html>
