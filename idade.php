@@ -107,5 +107,8 @@
         
       ?>
   </main>
+
+  <script src="JS/idade.js"></script>
+
 </body>  
 </html>

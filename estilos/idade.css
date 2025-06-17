@@ -1,3 +1,10 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --bg-color: #f0f4f8;
     --cor-primaria: #4a90e2;
@@ -10,8 +17,6 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: var(--bg-color);
     color: var(--cor-texto);
     font-family: var(--font-family);

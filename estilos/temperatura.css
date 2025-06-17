@@ -23,9 +23,14 @@ body {
     
 }
 
+a {
+    text-decoration: none;
+}
+
 section#conteudoPrincipal, header {
     background-color: bisque;
     margin: auto;
+    text-align: center;
 }
 
 select {
@@ -61,6 +66,10 @@ button#converter {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 button#converter:hover{
@@ -70,28 +79,136 @@ button#converter:hover{
 button#voltar {
     background-color: #2ecc71;
     color: #fff;
-    transition: background-color 0.3s ease;
     border: none;
     cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
 }
 
 button#voltar:hover{
     background-color: #27ae60;
 }
 
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="number"], select, button {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button#converter, button#voltar {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    p {
+        font-size: 13px;
+        padding: 15px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    section#conteudoPrincipal, header {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
 /* Celulares pequenos */
 @media (max-width: 480px) {
+    section#conteudoPrincipal, header {
+        padding: 20px;
+        margin: 10px;
+    }
 
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="number"], select, button {
+        width: 60%;
+    }
+
+    button#converter, button#voltar {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 15px;
+    }
+
+    p {
+        font-size: 14px;
+        padding: 10px 20px;
+        text-align: center;
+    }
 }
 
 /* Celulares médios e tablets pequenos */
 @media (min-width: 481px) and (max-width: 768px) {
+    section#conteudoPrincipal, header {
+        padding: 15px;
+        margin: 15px;
+    }
 
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="number"], select, button {
+        width: 80%;
+    }
+
+    button#converter, button#voltar {
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 15px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 10px 30px;
+        text-align: center;
+    }
 }
 
 /* Tablets e tela pequenas */
 @media (max-width: 1024px) {
+    section#conteudoPrincipal, header {
+        max-width: 90%;
+        padding: 30px;
+        margin: auto;
+    }
 
+    input[type="number"], select, button {
+        width: 35%;
+    }
+
+    button {
+        margin: 10px auto;
+    }
+
+    button#converter{
+        border-radius: 15px;
+        padding: 15px 30px 15px 30px;
+        font-size: 15px;
+    }
+
+    button#voltar{
+        border-radius: 15px;
+        padding: 15px 25px 15px 25px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 10px 40px;
+        text-align: center;
+    }
 }
 
 /* Telas grandes (desktop) */
@@ -100,24 +217,26 @@ button#voltar:hover{
         padding: 30px;
         box-shadow: black;
         max-width: 700px;
-        text-align: center;
     }
 
     button#converter{
         border-radius: 15px;
         padding: 15px 50px 15px 50px;
         font-size: 15px;
+        margin: 10px auto;
     }
 
     button#voltar{
         border-radius: 15px;
         padding: 15px 50px 15px 50px;
-        margin-bottom: 10px;
         font-size: 15px;
     }
 
     p {
         text-align: center;
         font-size: 18px;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 0 20px;
     }
 }
