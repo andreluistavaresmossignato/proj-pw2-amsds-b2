@@ -18,17 +18,24 @@
 
 body {
     font-family: var(--fontePrincipal);
-    background-color: rgb(255, 255, 0);
+    background-color: #F0F3FF;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px 0px 30px 0px;
 }
 
 section#principal, header {
     background-color: white;
     margin: auto;
+}
+
+header {
+    margin-top: 100px;
+    background-color: whitesmoke;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.354);
 }
 
 section#botoes {
@@ -41,6 +48,12 @@ section#botoes {
 .btn_telaPrincipal:hover {
     cursor: pointer;
     border: 2px solid black;
+}
+
+section#principal {
+    background-color: whitesmoke;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.354);
 }
 
 button#idade:hover {

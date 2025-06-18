@@ -115,8 +115,10 @@
             echo "<p><strong>Temperatura ambiente ideal.</strong> Essa faixa é considerada confortável para a maioria das pessoas. Atividades ao ar livre e funcionamento de equipamentos ocorrem normalmente nesse intervalo.</p>";
         } elseif ($celsiusConvertido > 25 && $celsiusConvertido <= 35) {
             echo "<p><strong>Temperatura elevada.</strong> É importante manter-se hidratado e evitar exposição direta ao sol por longos períodos. Climas assim podem causar desconforto e cansaço, principalmente em ambientes fechados.</p>";
-        } else {
+        } elseif($celsiusConvertido >= 36 && $celsiusConvertido < 5500) {
             echo "<p><strong>Alerta de calor extremo!</strong> Níveis assim aumentam o risco de desidratação, insolação e superaquecimento de equipamentos eletrônicos. Redobre os cuidados com a saúde e evite esforço físico nas horas mais quentes do dia.</p>";
+        } else {
+            echo "<p><strong>ALERTA EXTREMO!</strong> Temperatura insana, o sol tá se achando o próprio forno de pizza! Cuidado, a Terra tá quase virando um forno à lenha – se você sentir um calorzinho, é o universo te avisando que tá rolando um churrasco cósmico! 🔥🌞🌪</p>";
         }
     } else {
         echo "<p>A temperatura, seja ela muito alta ou muito baixa, representa um perigo significativo para o corpo humano e para o funcionamento de sistemas e equipamentos. O corpo humano, em particular, possui uma faixa de temperatura ideal (homeostase, em torno de 36,5°C a 37,5°C) na qual todas as suas funções vitais operam de maneira eficiente. Fora dessa faixa, os riscos à saúde se tornam graves.</p>";
@@ -132,7 +134,7 @@
     var celsiusConvertido = <?php echo $celsiusConvertido; ?>;
 
     if (celsiusConvertido < -10) {
-        document.body.style.backgroundImage = "url(imagens/ neve.jpg)"; // Frio Extremo
+        document.body.style.backgroundImage = "url(imagens/neve.jpg)"; // Frio Extremo
         document.body.style.backgroundSize = "cover"
     } else if (celsiusConvertido < 15) {
         document.body.style.backgroundColor = "#70a1ff"; // Frio
@@ -140,8 +142,10 @@
         document.body.style.backgroundColor = "#dff0d8"; // Confortável
     } else if (celsiusConvertido > 25 && celsiusConvertido <= 35) {
          document.body.style.backgroundColor = "#00bfff";// Quente
-    } else {
+    } else if(celsiusConvertido >= 36 && celsiusConvertido < 5500) {
         document.body.style.background = "linear-gradient(to bottom, #ff6347,rgb(212, 57, 0))"; // Calor extremo
+    } else {
+        document.body.style.background = "linear-gradient(to bottom,rgb(114, 12, 12),rgb(130, 101, 7))";
     }
 </script>
 
