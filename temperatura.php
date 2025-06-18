@@ -6,7 +6,7 @@
     <title>Conversor de Temperatura</title>
     <link rel="stylesheet" href="estilos/temperatura.css">
 </head>
-<body>
+<bodyz>
 
 <header>
     <h1>Conversor de Temperatura</h1>
@@ -127,6 +127,23 @@
 </main>
 
 <script src="JS/temperatura.js"></script>
+
+<script>
+    var celsiusConvertido = <?php echo $celsiusConvertido; ?>;
+
+    if (celsiusConvertido < -10) {
+        document.body.style.backgroundImage = "url(imagens/ neve.jpg)"; // Frio Extremo
+        document.body.style.backgroundSize = "cover"
+    } else if (celsiusConvertido < 15) {
+        document.body.style.backgroundColor = "#70a1ff"; // Frio
+    } else if (celsiusConvertido >= 16 && celsiusConvertido <= 25) {
+        document.body.style.backgroundColor = "#dff0d8"; // Confortável
+    } else if (celsiusConvertido > 25 && celsiusConvertido <= 35) {
+         document.body.style.backgroundColor = "#00bfff";// Quente
+    } else {
+        document.body.style.background = "linear-gradient(to bottom, #ff6347,rgb(212, 57, 0))"; // Calor extremo
+    }
+</script>
 
 </body>
 </html>

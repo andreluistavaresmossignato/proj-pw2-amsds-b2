@@ -28,9 +28,15 @@ a {
 }
 
 section#conteudoPrincipal, header {
-    background-color: bisque;
+    background-color: whitesmoke;
     margin: auto;
     text-align: center;
+    border-radius: 30px;
+    border: 5px solid black;
+}
+
+header {
+    margin-bottom: 20px;
 }
 
 select {
@@ -70,6 +76,7 @@ button#converter {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-size: cover;
 }
 
 button#converter:hover{
