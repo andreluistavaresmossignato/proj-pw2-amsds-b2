@@ -2,40 +2,95 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     /* Fontes */
     --fontePrincipal: 'Inter', sans-serif;
+    --fonteSecundaria: 'Poppins', sans-serif;
 
     /* Cores */
-    --btnIdadeColor: rgb(206, 223, 249);
-    --btnTemperaturaColor: rgb(255, 179, 179);
+    --corPrimaria: #372991;
+    --corSecundaria: #F0F3FF;
+    --corCardFundo: #FFFFFF;
+    --btnIdadeColor: #5d4dc6;
+    --btnTemperaturaColor: #2711b7;
+    --corTextoClaro: #FFFFFF;
+    --corTextoEscuro: #333333;
+    --corBordaClara: rgba(0, 0, 0, 0.1);
+    --corSombraLeve: rgba(0, 0, 0, 0.15);
+    --corTextoPadraoInfo: rgba(255, 255, 255, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: var(--fontePrincipal);
-    background-color: #F0F3FF;
+    background-color: var(--corSecundaria);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
 }
 
 h1 {
+    font-family: var(--fonteSecundaria);
     text-align: center;
-    margin: 30px 0px 30px 0px;
+    margin: 30px 0;
+    color: var(--corTextoEscuro);
+    font-size: 2.5em;
+    padding: 0 15px;
 }
 
-section#principal, header {
-    background-color: white;
-    margin: auto;
+#content-card {
+    background-color: var(--corCardFundo);
+    margin: 50px auto 20px auto;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 8px 16px var(--corSombraLeve);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-grow: 1;
 }
 
 header {
-    margin-top: 100px;
-    background-color: whitesmoke;
-    border-radius: 20px 20px 0px 0px;
-    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.354);
+    background-color: var(--corCardFundo);
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+main {
+    flex-grow: 1;
+    background-color: var(--corCardFundo);
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+section#principal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-height: 250px;
+}
+
+section#container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
 
 section#botoes {
@@ -43,144 +98,195 @@ section#botoes {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    margin-bottom: 0;
+}
+
+.btn-link {
+    text-decoration: none;
+    display: block;
+}
+
+.btn_telaPrincipal {
+    background-color: var(--corPrimaria);
+    color: var(--corTextoClaro);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--corSombraLeve);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    height: 60px;
 }
 
 .btn_telaPrincipal:hover {
-    cursor: pointer;
-    border: 2px solid black;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-section#principal {
-    background-color: whitesmoke;
-    border-radius: 0px 0px 20px 20px;
-    box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.354);
-}
-
-button#idade:hover {
+button#btnIdade:hover {
     background-color: var(--btnIdadeColor);
 }
 
-button#temperatura:hover {
+button#btnTemperatura:hover {
     background-color: var(--btnTemperaturaColor);
 }
 
-p#txtPadrao {
-    text-align: center;
-    color: rgba(0, 0, 0, 0.358);
+section#infos {
+    background-color: var(--corPrimaria);
+    color: var(--corTextoClaro);
+    padding: 25px;
+    border-radius: 10px;
+    min-height: 120px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, border 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-p#txtTemperatura, p#txtIdade{
+.info-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     text-align: center;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 5px;
+}
+
+.info-text.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+p#txtPadrao {
+    color: var(--corTextoPadraoInfo);
+    font-style: italic;
+    font-weight: 300;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: var(--corTextoEscuro);
+    font-size: 0.9em;
+    background-color: var(--corCardFundo);
+    box-shadow: 0 -2px 5px var(--corSombraLeve);
 }
 
 /* Celulares pequenos */
 @media (max-width: 480px) {
-    section#infos {
-        width: 80%;
-        margin: auto;
-        padding: 20px;
-        border-radius: 10px;
+    h1 {
+        font-size: 2em;
     }
     .btn_telaPrincipal {
-        width: 200px;
-        height: 30px;
-        margin: auto;
-        margin: 5px 10px 20px 0px;
+        width: 90%;
+        max-width: 280px;
+        font-size: 1em;
+        height: 50px;
     }
-    section#principal, header{
-        padding: 10px;
-        width: 100vw;
-        margin: 0;
-        padding: 0;
+    section#infos {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+        min-height: 100px;
     }
-
-    section#principal, header{
-        padding: 5px;
+    #content-card {
+        margin-top: 20px;
+        border-radius: 0;
     }
 }
 
 /* Celulares médios e tablets pequenos */
 @media (min-width: 481px) and (max-width: 768px) {
     h1 {
-        font-size: 400px;
+        font-size: 2.8em;
     }
     .btn_telaPrincipal {
-        width: 300px;
-        height: 40px;
-        margin: 5px 10px 20px 0px;
+        width: 280px;
+        height: 55px;
+        font-size: 1.1em;
     }
-    section#principal, header {
-        padding: 5px;
+    section#infos {
+        width: 70%;
+        margin: 30px auto;
+        min-height: 110px;
     }
-    /* Adicione outros estilos específicos para esta faixa */
 }
 
 /* Tablets e tela pequenas */
-@media (max-width: 1024px) {
-
-    section#principal, header{
-        padding: 10px;
-        max-width: 700px;
-    }
-
+@media (min-width: 769px) and (max-width: 1024px) {
     h1 {
-        font-size: 45px;
+        font-size: 3.5em;
     }
     .btn_telaPrincipal {
-        width: 300px;
-        height: 40px;
-        margin: 5px 10px 20px 0px;
+        width: 320px;
+        height: 60px;
+        font-size: 1.2em;
     }
     section#infos {
-        width: 40%;
-        margin: auto;
-        padding: 20px;
-        border-radius: 10px;
+        width: 60%;
+        margin: 40px auto;
+        min-height: 130px;
     }
-    
+    section#container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    section#botoes {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    section#infos {
+        width: 80%;
+    }
 }
 
 /* Telas grandes (desktop) */
 @media (min-width: 1025px) {
-    section#principal, header{
-        padding: 10px;
-        max-width: 1000px;
-    }
-
-    section#infos {
-        width: 40%;
-        margin: auto;
-        padding: 20px;
-        border-radius: 10px;
-    }
-
     h1 {
-        font-size: 50px;
+        font-size: 4em;
     }
-
-    .btn_telaPrincipal {
-        width: 400px;
-        height: 70px;
-        margin: auto;
-        margin: 5px 10px 20px 5px;
-        font-size: 18px;
+    #content-card {
+        max-width: 1200px;
+        margin-top: 80px;
     }
-
-    #container {
-        display: flex;
+    section#container {
+        flex-direction: row;
         justify-content: space-around;
         align-items: flex-start;
+        padding: 30px;
     }
-
     section#botoes {
         width: 45%;
-        display: flex;
         flex-direction: column;
         align-items: flex-end;
+        gap: 30px;
     }
-
+    .btn_telaPrincipal {
+        width: 380px;
+        height: 70px;
+        font-size: 1.3em;
+    }
     section#infos {
-        width: 30%;
+        width: 45%;
+        min-height: 200px;
+        padding: 30px;
+        margin: 0;
     }
 }

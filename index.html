@@ -4,33 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
-    <title>Menu</title>
+    <title>Menu Principal</title>
 </head>
 <body>
     <section id="tudo">
-        <header>
-            <h1>Tela Principal</h1>
-        </header>
-        <main>
-            <section id="principal">
-                <section id="container">
-                    <section id="botoes">
-                        <a href="idade.php" onmouseover="aparecerTexto('idade')" onmouseout="someTexto('idade')">
-                            <button class="btn_telaPrincipal" id="idade">Calculadora de Idade 🎂</button>
-                        </a>
-                        <a href="temperatura.php" onmouseover="aparecerTexto('temperatura')" onmouseout="someTexto('temperatura')">
-                            <button class="btn_telaPrincipal" id="temperatura">Medidor de Temperatura 🌡️</button>
-                        </a>
-                    </section>
-                    <section id="infos">
-                        <p id="txtPadrao">Passe o mouse em cima dos botões</p>
-                        <p id="txtTemperatura">Use esta ferramenta para converter rapidamente valores entre diferentes escalas de temperatura: Celsius, Fahrenheit e Kelvin.</p>
-                        <p id="txtIdade">Descubra sua idade com precisão! Informe sua data de nascimento e a calculadora mostrará exatamente quantos anos, meses e dias você tem.</p>
+        <div id="content-card">
+            <header>
+                <h1>Menu Principal</h1>
+            </header>
+            <main>
+                <section id="principal">
+                    <section id="container">
+                        <section id="botoes">
+                            <a href="idade.php" class="btn-link" onmouseover="aparecerTexto('idade')" onmouseout="someTexto('idade')">
+                                <button class="btn_telaPrincipal" id="btnIdade">Calculadora de Idade 🎂</button>
+                            </a>
+                            <a href="temperatura.php" class="btn-link" onmouseover="aparecerTexto('temperatura')" onmouseout="someTexto('temperatura')">
+                                <button class="btn_telaPrincipal" id="btnTemperatura">Conversor de Temperatura 🌡️</button>
+                            </a>
+                        </section>
+                        <section id="infos">
+                            <p id="txtPadrao" class="info-text active">Passe o mouse sobre os botões para mais informações.</p>
+                            <p id="txtTemperatura" class="info-text">Use esta ferramenta para converter rapidamente valores entre diferentes escalas de temperatura: Celsius, Fahrenheit e Kelvin.</p>
+                            <p id="txtIdade" class="info-text">Descubra sua idade com precisão! Informe sua data de nascimento e a calculadora mostrará exatamente quantos anos você tem, além disso, mostrará recomendações para cada idade.</p>
+                        </section>
                     </section>
                 </section>
-            </section>
+            </main>
+        </div>
+        <footer>
+            <p>&copy; 2025 Seus Conversores. Todos os direitos reservados.</p>
+        </footer>
     </section>
-    </main>
     <script src="JS/index.js"></script>
 </body>
 </html>

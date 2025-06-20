@@ -1,41 +1,33 @@
-// variaveis
-
 // Elementos DOM
-const txtInfos = document.getElementById('infos')
-const txtPadrao = document.getElementById('txtPadrao')
-const txtIdade = document.getElementById('txtIdade')
-const txtTemperatura = document.getElementById('txtTemperatura')
+const txtInfos = document.getElementById('infos');
+const txtPadrao = document.getElementById('txtPadrao');
+const txtIdade = document.getElementById('txtIdade');
+const txtTemperatura = document.getElementById('txtTemperatura');
 
 // funções
+function ocultarTextos() {
+    txtPadrao.classList.remove('active');
+    txtIdade.classList.remove('active');
+    txtTemperatura.classList.remove('active');
+}
+
 function aparecerTexto(metodo) {
-    txtPadrao.style.display = 'none'
-    txtInfos.style.border = '1px solid black'
+    ocultarTextos();
 
     switch (metodo) {
         case 'idade': 
-        txtIdade.style.display = 'block'
-        txtInfos.style.backgroundColor = 'var(--btnIdadeColor)'
-        break
-
+            txtIdade.classList.add('active');
+            txtInfos.style.backgroundColor = 'var(--btnIdadeColor)';
+            break;
         case 'temperatura':
-        txtTemperatura.style.display = 'block'
-        txtInfos.style.backgroundColor = 'var(--btnTemperaturaColor)'
-        break
+            txtTemperatura.classList.add('active');
+            txtInfos.style.backgroundColor = 'var(--btnTemperaturaColor)';
+            break;
     }
 }
 
 function someTexto(metodo) {
-    txtPadrao.style.display = 'block'
-    txtInfos.style.border = 'none'
-    txtInfos.style.backgroundColor = 'white'
-    
-    switch (metodo) {
-        case 'idade': 
-        txtIdade.style.display = 'none'
-        break
-
-        case 'temperatura':
-        txtTemperatura.style.display = 'none'
-        break
-    }
+    ocultarTextos();
+    txtPadrao.classList.add('active');
+    txtInfos.style.backgroundColor = 'var(--corPrimaria)';
 }

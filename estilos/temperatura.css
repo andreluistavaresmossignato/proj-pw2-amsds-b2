@@ -1,3 +1,26 @@
+@charset "UTF-8"; 
+
+/* Lista de cores de fundo (de acordo com cada temperatura) */
+.bg-extremo {
+  background: linear-gradient(to bottom, #ff6347, rgb(212, 57, 0));
+}
+.bg-quente {
+  background: linear-gradient(to bottom, #fddf65, #ffe16a) ;
+}
+.bg-confortavel {
+  background: linear-gradient(to bottom, #81fdb5, #50fd98) ;
+}
+.bg-frio {
+  background-color: #5DADE2;
+}
+.bg-neve {
+  background: linear-gradient(to bottom, #70a1ff, #8eb6ff);
+}
+.bg-insano {
+  background: linear-gradient(to bottom, rgb(114, 12, 12), rgb(130, 101, 7));
+}
+
+/* Variáveis */
 :root {
     --azul: #1e3a8a;
     --azul-claro: #3b82f6;
@@ -8,129 +31,110 @@
     --sombra: rgba(0, 0, 0, 0.2);
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom right, #1e3a8a, #3b82f6);
-    color: var(--texto-branco);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    transition: background 0.5s ease;
-  }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #1e3a8a, #3b82f6);
+  color: var(--texto-branco);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: background 0.5s ease;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  .container {
-    background-color: var(--fundo-card);
-    border: 1px solid var(--borda-card);
-    border-radius: 16px;
-    padding: 30px;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 8px 20px var(--sombra);
-    backdrop-filter: blur(15px);
-  }
+.container {
+  background-color: var(--fundo-card);
+  border: 1px solid var(--borda-card);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px var(--sombra);
+  backdrop-filter: blur(15px);
+}
 
-  h1 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
 
-  label {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    display: block;
-  }
+label {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  display: block;
+}
 
-  input, select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    margin-bottom: 16px;
-    font-size: 1rem;
-    color: #333;
-  }
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #333;
+}
 
-  button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background-color: #2563eb;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: background 0.3s;
-  }
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
 
-  button:hover {
-    background-color: #1d4ed8;
-    cursor: pointer;
-  }
+button:hover {
+  background-color: #1d4ed8;
+  cursor: pointer;
+}
 
-  button#voltar {
-    margin-top: 20px;
-  }
+button#voltar {
+  margin-top: 20px;
+}
 
-  .bg-extremo {
-    background: linear-gradient(to bottom, #ff6347, rgb(212, 57, 0));
-  }
-  .bg-quente {
-    background: linear-gradient(to bottom, #fddf65, #ffe16a) ;
-  }
-  .bg-confortavel {
-    background: linear-gradient(to bottom, #81fdb5, #50fd98) ;
-  }
-  .bg-frio {
-    background-color: #5DADE2;
-  }
-  .bg-neve {
-    background: linear-gradient(to bottom, #70a1ff, #8eb6ff);
-  }
-  .bg-insano {
-    background: linear-gradient(to bottom, rgb(114, 12, 12), rgb(130, 101, 7));
-  }
+.resultado {
+  background-color: white;
+  color: #111827;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px var(--sombra);
+}
 
-  .resultado {
-    background-color: white;
-    color: #111827;
-    padding: 20px;
-    border-radius: 16px;
-    margin-top: 20px;
-    box-shadow: 0 4px 10px var(--sombra);
-  }
+.aviso {
+  background-color: #eff6ff;
+  color: #1e40af;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
 
-  .aviso {
-    background-color: #eff6ff;
-    color: #1e40af;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px;
-    font-size: 0.95rem;
-  }
+.temperatura {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
 
-  .temperatura {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-
-  .icon {
-    font-size: 1.2rem;
-  }
+.icon {
+  font-size: 1.2rem;
+}
