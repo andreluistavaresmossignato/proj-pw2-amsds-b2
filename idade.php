@@ -29,8 +29,7 @@
                 $dataNascimentoObj = new DateTime($dataNascimento);
                 $hoje = new DateTime();
                 $idade = $hoje->diff($dataNascimentoObj)->y;
-                if($dataNascimentoObj->format('y') < 120 && $dataNascimentoObj->format('d-m-y') <= $hoje->format('d-m-y') && $idade <= 122) {
-
+                if($dataNascimentoObj <= $hoje && $idade <= 122) {
                     # Mensagem padrão
                     echo "<br><p>Você tem <strong>$idade anos</strong>.</p><br>";
 
@@ -40,7 +39,7 @@
                     } else if ($dataNascimentoObj->format('d-m') === $hoje->format('d-m')) {
                         echo "<p><strong>Hoje é seu aniversário, parabéns!! 🥳🎉</strong></p>";
                     } elseif ($idade == 122) {
-                        echo "<p><strong>Essa é a idade da pessoa mais velha do mundo 👏</strong></p>";
+                        echo "<p><strong>Essa já foi a idade da pessoa mais velha do mundo 👏</strong></p>";
                     }
                     $pode_conteudoExtra = true;
                 }
