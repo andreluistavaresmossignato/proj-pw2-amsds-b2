@@ -61,8 +61,11 @@
         elseif ($para === "kelvin") $celsiusConvertido = $resultado - 273.15;
 
         echo "<div class='resultado'>";
-        echo "<strong>Resultado</strong><div class='temperatura'>" . number_format($resultado, 2) . " °" . strtoupper(substr($para, 0, 1)) . "</div>";
 
+        if($para === "kelvin") echo "<strong>Resultado</strong><div class='temperatura'>" . number_format($resultado, 2) . " " . strtoupper(substr($para, 0, 1)) . "</div>";
+        else echo "<strong>Resultado</strong><div class='temperatura'>" . number_format($resultado, 2) . " °" . strtoupper(substr($para, 0, 1)) . "</div>";
+        
+        
         if ($celsiusConvertido < -10) {
             echo "<div class='aviso'>❄️Alerta de temperatura extremamente baixa! Níveis tão baixos representam risco de congelamento. Use roupas térmicas e evite exposição prolongada.</div>";
             echo "<script>document.body.classList.add('bg-neve');</script>";

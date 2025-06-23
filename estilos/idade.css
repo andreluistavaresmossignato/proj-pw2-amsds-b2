@@ -101,3 +101,8 @@ strong {
 .btn-voltar:hover {
     background-color: #27ae60;
 }
+
+.conteudo-extra {
+    margin: 10px;
+    list-style-position: inside;
+}
